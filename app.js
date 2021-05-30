@@ -31,11 +31,11 @@ app.get("/version", (req, res) => {
 
 app.use("/api/user", userRoute);
 
-app.listen(3000, ()=>{
-    console.log("run on 3000");
-})
+// app.listen(3000, ()=>{
+//     console.log("run on 3000");
+// })
 
-// const httpServer = http.createServer(app);
-// httpServer.listen(80, () => {
-//   console.log("HTTP Server running on port 80");
-// });
+const httpServer = http.createServer(app);
+httpServer.listen(80, () => {
+  console.log("HTTP Server running on port 80");
+});
