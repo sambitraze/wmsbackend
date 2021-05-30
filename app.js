@@ -29,7 +29,10 @@ app.get("/version", (req, res) => {
   res.send("1.0.0");
 });
 
+app.get("/",(req,res)=>{res.send("server running!!!")});
+
 app.use("/api/user", userRoute);
+
 const port  = process.env.PORT || 3000;
 
 app.listen(port, ()=>{
