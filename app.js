@@ -6,9 +6,10 @@ const admin = require("firebase-admin");
 const app = express();
 const path = require("path");
 const cors = require("cors");
-const http = require("http");
 
 const userRoute = require("./routes/user");
+const authRoute = require("./routes/auth");
+const emailRoute = require("./routes/email");
 
 app.use(cors());
 app.options("*", cors());
@@ -32,14 +33,12 @@ app.get("/version", (req, res) => {
 app.get("/",(req,res)=>{res.send("server running!!!")});
 
 app.use("/api/user", userRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/email", emailRoute);
 
 const port  = process.env.PORT || 3000;
 
 app.listen(port, ()=>{
     console.log(`run on ${port}`);
 })
-
-// const httpServer = http.createServer(app);
-// httpServer.listen(80, () => {
-//   console.log("HTTP Server running on port 80");
-// });
+;

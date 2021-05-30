@@ -14,13 +14,42 @@ var userSchema = mongoose.Schema(
         required: true,
         unique: true,
       },
+      password: {
+        type: String,
+        trim: true,
+        required: true,
+      },
       phone: {
         type: String,
         trim: true,
       },
-      deviceToken: {
+      roll: {
         type: String,
         trim: true,
+      },
+      dob: {
+        type: String,
+        trim: true,
+      },
+      desgination: {
+        type: String,
+        trim: true,
+      },
+      email2: {
+        type: String,
+        trim: true,
+      },
+      usertype: {
+        type: String,
+        trim: true,
+      },
+      blocked: {
+        type: Boolean,
+        default: false,
+      },
+      isverified: {
+        type: Boolean,
+        default: false,
       },
     },
     { timestamps: true }
