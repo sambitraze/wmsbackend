@@ -35,6 +35,10 @@ var userSchema = mongoose.Schema(
         type: String,
         trim: true,
       },
+      department: {
+        type: String,
+        trim: true,
+      },
       email2: {
         type: String,
         trim: true,

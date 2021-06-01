@@ -10,6 +10,7 @@ const cors = require("cors");
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const emailRoute = require("./routes/email");
+const meetingRoute = require("./routes/meeting");
 
 app.use(cors());
 app.options("*", cors());
@@ -35,6 +36,7 @@ app.get("/",(req,res)=>{res.send("server running!!!")});
 app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/email", emailRoute);
+app.use("/api/meeting", meetingRoute);
 
 const port  = process.env.PORT || 3000;
 
