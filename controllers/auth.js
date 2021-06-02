@@ -1,9 +1,7 @@
-const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 const User = require("../models/user");
-const { options } = require("../routes/user");
 
 exports.register = async (req, res) => {
   const isEmailExist = await User.findOne({ email: req.body.email });
@@ -20,6 +18,7 @@ exports.register = async (req, res) => {
     password: password,
     isverified: true,
   });
+  user.password = undefined;
 
   try {
     const savedUser = await user.save();
