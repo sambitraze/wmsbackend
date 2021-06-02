@@ -18,7 +18,6 @@ exports.register = async (req, res) => {
     password: password,
     isverified: true,
   });
-  user.password = undefined;
 
   try {
     const savedUser = await user.save();
