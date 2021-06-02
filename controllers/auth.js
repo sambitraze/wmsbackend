@@ -44,6 +44,7 @@ exports.login = async (req, res) => {
   });
 
   res.send({
+    message: "Sign in successfull" ,
     token: token,
     user: user,
   });
