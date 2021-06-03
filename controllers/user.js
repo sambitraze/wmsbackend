@@ -8,8 +8,7 @@ exports.getUserById = (req, res) => {
         message: "No user was found in DB",
       });
     }
-    req.profile = user;
-    next();
+    res.json(user);
   });
 };
 
