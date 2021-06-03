@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
   });
 };
 
-exports.verify = (req, res) => {
+exports.verify = (req, res, next) => {
   const token = req.header("auth-token");
   jwt.verify(token, process.env.TOKEN_SECRET, function (err, decoded) {
     if (err) {

@@ -28,7 +28,7 @@ mongoose
   });
 
 app.get("/version", (req, res) => {
-  res.send("1.0.0");
+  res.send("1.0.1");
 });
 
 app.get("/",(req,res)=>{res.send("server running!!!")});
