@@ -17,6 +17,7 @@ exports.register = async (req, res) => {
 
   try {
     const savedUser = await user.save();
+    savedUser.password = undefined;
     res.json({
       message: "Sign up successfull",
       user: savedUser,
@@ -40,7 +41,7 @@ exports.login = async (req, res) => {
   });
 
   res.send({
-    message: "Sign in successfull" ,
+    message: "Sign in successfull",
     token: token,
     user: user,
   });
