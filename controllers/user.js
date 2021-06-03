@@ -5,7 +5,7 @@ exports.getUserById = (req, res) => {
   User.findById(req.params.id).exec((err, user) => {
     if (err || !user) {
       return res.status(400).json({
-        error: "No user was found in DB",
+        message: "No user was found in DB",
       });
     }
     req.profile = user;
@@ -19,7 +19,7 @@ exports.createUser = (req, res) => {
     console.log(err);
     if (err) {
       res.status(400).json({
-        error: "error saving user in DB",
+        message: "error saving user in DB",
       });
     }
     res.json(user);
@@ -31,7 +31,7 @@ exports.getUserByEmail = (req, res) => {
     .exec((err, user) => {
       if (user.length === 0 || err) {
         return res.status(400).json({
-          error: "No Phone Number is there.",
+          message: "No Phone Number is there.",
         });
       } else res.json(user);
     });
@@ -42,7 +42,7 @@ exports.getAllUsers = (req, res) => {
   User.find().exec((err, user) => {
     if (err) {
       res.status(400).json({
-        error: "No USERS are found",
+        message: "No USERS are found",
       });
     }
     res.json(user);
@@ -59,7 +59,7 @@ exports.updateUser = (req, res) => {
       if (err) {
         console.log(err);
         return res.status(400).json({
-          error: "You are not authorized to update this user",
+          message: "upadate failed",
         });
       }
       user.password = undefined;
@@ -72,7 +72,7 @@ exports.userCount = (req, res) => {
   User.collection.countDocuments({}, (err, usercount) => {
     if (err) {
       res.status(400).json({
-        error: "user count error",
+        message: "user count error",
       });
     } else {
       res.json({
