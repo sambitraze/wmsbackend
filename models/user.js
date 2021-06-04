@@ -43,10 +43,6 @@ var userSchema = mongoose.Schema(
         type: String,
         trim: true,
       },
-      usertype: {
-        type: String,
-        trim: true,
-      },
       blocked: {
         type: Boolean,
         default: false,
