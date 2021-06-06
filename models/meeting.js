@@ -5,9 +5,6 @@ var participantSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  mail: {
-    type: String,
-  },
   isPresent: {
     type: Boolean,
     default: false,
