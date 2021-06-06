@@ -53,7 +53,7 @@ var userSchema = mongoose.Schema(
       },
       photoUrl: {
         type: String,
-        default: "https://drive.google.com/file/d/15lBlyC8YptOhxjxuSR51R5gz68ewLIIK/view?usp=sharing"
+        default: "https://res.cloudinary.com/sambitraze/image/upload/v1622954053/dummy_gk6oij.png"
 
       }
     },
