@@ -14,7 +14,7 @@ var participantSchema = mongoose.Schema({
   },
 });
 
-var userSchema = mongoose.Schema(
+var meetingSchema = mongoose.Schema(
   {
     start: {
       type: Date,
@@ -45,13 +45,9 @@ var userSchema = mongoose.Schema(
       type: String,
       trim: true,
     },
-    momBy: {
-      type: String,
-      trim: true,
-    },
     attendees: [participantSchema],
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Meeting", userSchema, "meetings");
+module.exports = mongoose.model("Meeting", meetingSchema, "meetings");

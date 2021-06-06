@@ -51,6 +51,11 @@ var userSchema = mongoose.Schema(
         type: Boolean,
         default: false,
       },
+      photoUrl: {
+        type: String,
+        default: "https://drive.google.com/file/d/15lBlyC8YptOhxjxuSR51R5gz68ewLIIK/view?usp=sharing"
+
+      }
     },
     { timestamps: true }
   );

@@ -1,6 +1,5 @@
 const User = require("../models/user");
 
-
 exports.getUserById = (req, res) => {
   User.findById(req.params.id).exec((err, user) => {
     if (err || !user) {
@@ -26,26 +25,26 @@ exports.createUser = (req, res) => {
 };
 
 exports.getUserByEmail = (req, res) => {
-  User.find({ email: req.params.email })
-    .exec((err, user) => {
-      if (user.length === 0 || err) {
-        return res.status(400).json({
-          message: "No Phone Number is there.",
-        });
-      } else res.json(user);
-    });
+  User.find({ email: req.params.email }).exec((err, user) => {
+    if (user.length === 0 || err) {
+      return res.status(400).json({
+        message: "No Phone Number is there.",
+      });
+    } else res.json(user);
+  });
 };
 
-
 exports.getAllUsers = (req, res) => {
-  User.find().exec((err, user) => {
-    if (err) {
-      res.status(400).json({
-        message: "No USERS are found",
-      });
-    }
-    res.json(user);
-  });
+  User.find()
+  .sort({"createdAt":-1})
+    .exec((err, user) => {
+      if (err) {
+        res.status(400).json({
+          message: "No USERS are found",
+        });
+      }
+      res.json(user);
+    });
 };
 
 exports.updateUser = (req, res) => {

@@ -13,7 +13,7 @@ exports.getMeetingById = (req, res) => {
     .exec((err, meeting) => {
       if (err || !meeting) {
         return res.status(400).json({
-          error: "No Meeting was found in DB",
+          message: "No Meeting was found in DB",
         });
       }
       res.json(meeting);
@@ -30,10 +30,11 @@ exports.getMeetingByDate = (req, res) => {
         },
       })
       .populate("createdBy")
+      .sort({"createdAt":-1})
       .exec((err, meeting) => {
         if (err || !meeting) {
           return res.status(400).json({
-            error: "No Meeting was found in DB",
+            message: "No Meeting was found in DB",
           });
         }
         res.json(meeting);
@@ -46,7 +47,7 @@ exports.createMeeting = (req, res) => {
     console.log(err);
     if (err) {
       res.status(400).json({
-        error: "error saving meeting in DB",
+        message: "error saving meeting in DB",
       });
     }
     res.json(meet);
@@ -63,10 +64,11 @@ exports.getAllMeeting = (req, res) => {
       },
     })
     .populate("createdBy")
+    .sort({"createdAt":-1})
     .exec((err, meeting) => {
       if (err) {
         res.status(400).json({
-          error: "No meetings are found",
+          message: "No meetings are found",
         });
       }
       res.json(meeting);
@@ -82,7 +84,7 @@ exports.updateMeeting = (req, res) => {
       if (err) {
         console.log(err);
         return res.status(400).json({
-          error: "You are not authorized to update this meeting",
+          message: "You are not authorized to update this meeting",
         });
       }
       res.json(meeting);
