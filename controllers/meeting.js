@@ -76,7 +76,7 @@ exports.getAllMeeting = (req, res) => {
 };
 
 exports.updateMeeting = (req, res) => {
-  User.findByIdAndUpdate(
+  Meeting.findByIdAndUpdate(
     { _id: req.body._id },
     { $set: req.body },
     { new: true, useFindAndModify: false },
