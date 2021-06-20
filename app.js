@@ -28,7 +28,7 @@ mongoose
   });
 
 app.get("/version", (req, res) => {
-  res.json({"version": "1.0.0+1","updateLink": ""});
+  res.json({"version": "1.0.0+1","updateLink": "https://github.com/sambitraze/work_management_app/raw/master/release/app-release.apk"});
 });
 
 app.get("/",(req,res)=>{res.send("server running!!!")});
