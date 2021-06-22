@@ -63,6 +63,10 @@ var userSchema = mongoose.Schema(
         type: Boolean,
         default: false,
       },
+      blocked: {
+        type: Boolean,
+        default: false,
+      },
       photoUrl: {
         type: String,
         default: "https://res.cloudinary.com/sambitraze/image/upload/v1622954053/dummy_gk6oij.png"
