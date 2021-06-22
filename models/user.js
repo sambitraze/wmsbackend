@@ -56,7 +56,7 @@ var userSchema = mongoose.Schema(
         trim: true,
       },
       twitter: {
-        type: Boolean,
+        type: String,
         default: false,
       },
       isverified: {
