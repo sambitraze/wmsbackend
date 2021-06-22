@@ -55,6 +55,10 @@ var userSchema = mongoose.Schema(
         type: String,
         trim: true,
       },
+      facebook: {
+        type: String,
+        trim: true,
+      },
       twitter: {
         type: String,
         default: false,
