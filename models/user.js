@@ -43,7 +43,19 @@ var userSchema = mongoose.Schema(
         type: String,
         trim: true,
       },
-      blocked: {
+      github: {
+        type: String,
+        trim: true,
+      },
+      linkedin: {
+        type: String,
+        trim: true,
+      },
+      instagram: {
+        type: String,
+        trim: true,
+      },
+      twitter: {
         type: Boolean,
         default: false,
       },
